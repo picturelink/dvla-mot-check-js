@@ -1,0 +1,9 @@
+{
+    "tslint.enable": false,
+    "tslint.packageManager": "yarn",
+    "files.exclude": {
+        "node_modules": true
+    },
+    "files.eol": "\n",
+    "editor.tabSize": 2
+}

@@ -1,0 +1,40 @@
+{
+  "name": "@picturelink/mot-check",
+  "version": "0.0.1",
+  "description": "A simple javascript library for accessing the DVLA MOT Check API",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint -c .eslintrc.json --ext .ts src",
+    "clean": "shx rm -Rf dist",
+    "prebuild": "npm run lint",
+    "build": "tsc",
+    "rebuild": "npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/picturelink/dvla-mot-check-js"
+  },
+  "author": "John Bayly",
+  "license": "MIT",
+  "homepage": "https://github.com/picturelink/dvla-mot-check-js",
+  "keywords": [
+    "TypeScript",
+    "DVLA",
+    "MOT"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "eslint": "^6.8.0",
+    "shx": "^0.3.2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@types/node-fetch": "^2.5.7",
+    "node-fetch": "^2.6.0",
+    "query-string": "^6.12.1"
+  }
+}
