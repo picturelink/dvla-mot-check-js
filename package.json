@@ -1,8 +1,9 @@
 {
   "name": "@picturelink/mot-check",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A simple javascript library for accessing the DVLA MOT Check API",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "barrels": "barrelsby --config barrelsby.json",
     "lint": "eslint -c .eslintrc.json --ext .ts src",
@@ -48,5 +49,8 @@
     "@types/node-fetch": "^2.5.7",
     "node-fetch": "^2.6.0",
     "query-string": "^6.12.1"
-  }
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }
