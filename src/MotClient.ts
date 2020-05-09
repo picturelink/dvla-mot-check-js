@@ -27,11 +27,13 @@ export class MotClient {
 
   /**
    * The API key used to access the DVLA MOT History API.
+   * Defaults to an empty string.
    */
   public ApiKey: string;
 
   /**
    * The number of seconds after which a request times out.
+   * Defaults to 15 seconds.
    */
   public Timeout = 15;
 
@@ -46,6 +48,7 @@ export class MotClient {
   /**
    * Returns a promise containing a list of MOT history objects.
    * @param page The page number to retrieve (0 based).
+   * @returns {MotHistory[]} An array of MOT history records.
    * @throws ApiError When the MOT History API returns an error response.
    */
   public async Lookup(page = 0): Promise<MotHistory[]> {
@@ -57,7 +60,8 @@ export class MotClient {
   /**
    * Returns a promise containing a list of MOT history objects for the specified date.
    * @param date The date to lookup, any time part is discarded.
-   * @param callback A callback function that reports the progress.
+   * @param callback An optional callback function that reports the progress.
+   * @returns {MotHistory[]} An array of MOT history records.
    * @throws ApiError When the MOT History API returns an error response.
    */
   public async LookupDate(date: Date, callback?: (minute: number, count: number) => Promise<void>): Promise<MotHistory[]> {
@@ -82,6 +86,7 @@ export class MotClient {
    * Returns a promise containing a list of MOT history objects for the specified date.
    * @param date The date to lookup, any time part is discarded.
    * @param minute The minute of the day, where 1 = 00:01, 330 = 05:30 1440 = 00:00
+   * @returns {MotHistory[]} An array of MOT history records.
    * @throws ApiError When the MOT History API returns an error response.
    */
   public async LookupDateTime(date: Date, minute = 1): Promise<MotHistory[]> {
@@ -104,6 +109,7 @@ export class MotClient {
   /**
    * Returns a promise containing an MOT history object for the specified vehicle.
    * @param vehicleId The unique DVLA ID of the vehicle.
+   * @returns {MotHistory} The MOT history record for the vehicle or null if not found.
    * @throws ApiError When the MOT History API returns an error response.
    */
   public async LookupVehicleId(vehicleId: string): Promise<MotHistory | null> {
@@ -119,6 +125,7 @@ export class MotClient {
   /**
    * Returns a promise containing an MOT history object for the specified vehicle.
    * @param registration The vehicle registration mark.
+   * @returns {MotHistory} The MOT history record for the vehicle or null if not found.
    * @throws ApiError When the MOT History API returns an error response.
    */
   public async LookupVrm(registration: string): Promise<MotHistory | null> {
