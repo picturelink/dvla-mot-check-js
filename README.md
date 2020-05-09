@@ -114,7 +114,8 @@ Creates an instance of the MotClient class.
 <a name="MotClient+Timeout"></a>
 
 ### motClient.Timeout
-Defaults to 15 seconds.fter which a request times out.
+The number of seconds after which a request times out.
+Defaults to 15 seconds.
 
 **Kind**: instance property of [<code>MotClient</code>](#MotClient)
 <a name="MotClient+Lookup"></a>
