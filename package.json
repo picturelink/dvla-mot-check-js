@@ -4,9 +4,10 @@
   "description": "A simple javascript library for accessing the DVLA MOT Check API",
   "main": "index.js",
   "scripts": {
+    "barrels": "barrelsby --config barrelsby.json",
     "lint": "eslint -c .eslintrc.json --ext .ts src",
     "clean": "shx rm -Rf dist",
-    "prebuild": "npm run lint",
+    "prebuild": "npm run barrels && npm run lint",
     "build": "tsc",
     "rebuild": "npm run clean && npm run build",
     "test": "mocha -r ts-node/register tests/**/*.spec.ts"
@@ -33,6 +34,7 @@
     "@types/sinon": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "@typescript-eslint/parser": "^2.31.0",
+    "barrelsby": "^2.2.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "eslint": "^6.8.0",
