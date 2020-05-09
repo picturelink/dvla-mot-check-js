@@ -1,4 +1,4 @@
-import { DVLAFuelType } from "./Enumerations";
+import { FuelType } from "./Enumerations";
 import { MotTest } from "./MotTest";
 
 /**
@@ -12,7 +12,7 @@ export interface MotHistory {
   firstUsedDate?: Date;
 
   /** The type of fuel that powers the vehicle. */
-  fuelType?: DVLAFuelType;
+  fuelType?: FuelType;
 
   /** The make of the vehicle. */
   make: string;

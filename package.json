@@ -1,6 +1,6 @@
 {
   "name": "@picturelink/mot-check",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A simple javascript library for accessing the DVLA MOT Check API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

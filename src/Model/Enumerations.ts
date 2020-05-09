@@ -14,7 +14,7 @@ export enum FailureReasonType {
 /**
  * The possible values for the fuel type field.
  */
-export enum DVLAFuelType {
+export enum FuelType {
   CNG = "CNG",
   Diesel = "Diesel",
   Electric = "Electric",

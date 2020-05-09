@@ -48,7 +48,7 @@ const result = await client.LookupVrm(vrm);
 <dt><a href="#FailureReasonType">FailureReasonType</a></dt>
 <dd><p>The possible values for the reason-for-failure type field.</p>
 </dd>
-<dt><a href="#DVLAFuelType">DVLAFuelType</a></dt>
+<dt><a href="#FuelType">FuelType</a></dt>
 <dd><p>The possible values for the fuel type field.</p>
 </dd>
 <dt><a href="#OdometerResultType">OdometerResultType</a></dt>
@@ -218,9 +218,9 @@ The version of the MOT History API that this client has been written for.
 The possible values for the reason-for-failure type field.
 
 **Kind**: global variable
-<a name="DVLAFuelType"></a>
+<a name="FuelType"></a>
 
-## DVLAFuelType
+## FuelType
 The possible values for the fuel type field.
 
 **Kind**: global variable
