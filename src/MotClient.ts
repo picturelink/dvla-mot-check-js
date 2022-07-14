@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+import fetch, { Response } from "node-fetch";
 import * as queryString from "query-string";
 
 import { ApiError } from "./Model/ApiError";
@@ -149,15 +149,25 @@ export class MotClient {
       query: params,
       url: MOT_TESTS_ENDPOINT,
     });
+    const controller = new AbortController();
+    const timeout = setTimeout(() => {
+      controller.abort();
+    }, this.Timeout * 1000);
+    let response: Response;
 
-    const response = await fetch(uri, {
-      headers: {
-        Accept: ACCEPT_CONTENT_TYPE,
-        "x-api-key": this.ApiKey,
-      },
-      method: method,
-      timeout: this.Timeout * 1000,
-    });
+    try {
+      response = await fetch(uri, {
+        headers: {
+          Accept: ACCEPT_CONTENT_TYPE,
+          "x-api-key": this.ApiKey,
+        },
+        method: method,
+        signal: controller.signal,
+      });
+    } finally {
+      // Ensure the signal is cleared in case a non-timeout error is thrown.
+      clearTimeout(timeout);
+    }
 
     if (response.status === 404) {
       return [];
